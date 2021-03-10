@@ -14,16 +14,16 @@ g_pow_x1 = mpz(1)
 left_side[h.digits()] = 0
 for x1 in range(1, 2**20+1):
     g_pow_x1 = f_mod(mul(g_pow_x1, g), p)
-    left_side[divm(h, g_pow_x1, p).digits()] = x1
+    left_side[divm(h, g_pow_x1, p)] = x1
 
 g_pow_B = powmod(g, B, p)
 found_x0 = None
 found_x1 = None
 for x0 in range(0, 2**20+1):
     ck = powmod(g_pow_B, x0, p)
-    if ck.digits() in left_side:
+    if ck in left_side:
         found_x0 = x0
-        found_x1 = left_side[ck.digits()]
+        found_x1 = left_side[ck]
         break
 else:
     print("Error: did not find x0")
