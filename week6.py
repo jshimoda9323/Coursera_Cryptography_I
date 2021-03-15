@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-#from gmpy2 import mpz, divm, mul, f_mod, powmod, add
 from gmpy2 import mpz, iroot, isqrt, sub, c_div, t_div, f_div, t_mod, powmod, mul, invert, t_divmod
 
 """
@@ -112,6 +111,6 @@ if res_C != C:
     print("4: Fail check res_C != C")
 pt_hex = pkcs_pt.digits(16).split("00")[1]
 print("4:")
-print(bytes.fromhex(pt_hex).decode('utf-8'))
+print("'"+bytes.fromhex(pt_hex).decode('utf-8')+"'")
 sys.exit(0)
 
